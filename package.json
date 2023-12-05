@@ -1,0 +1,23 @@
+{
+  "name": "contact-app",
+  "version": "1.0.0",
+  "description": "contact management application",
+  "main": "index.js",
+  "author": "Eric",
+  "license": "MIT",
+  "scripts": {
+    "lint": "cd server && yarn lint"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0"
+  },
+  "lint-staged": {
+    "server/src/*.ts": [
+      "yarn lint",
+      "cd server && yarn test-staged"
+    ]
+  }
+}
