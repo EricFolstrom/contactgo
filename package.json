@@ -6,7 +6,10 @@
   "author": "Eric",
   "license": "MIT",
   "scripts": {
-    "lint": "cd server && yarn lint"
+    "start": "concurrently \"cd server && yarn start\" \"cd client && yarn dev\"",
+    "lint": "cd server && yarn lint",
+    "build-server": "cd server && yarn build",
+    "postinstall": "cd server && yarn && cd ../client && yarn && cd .. && yarn build-server"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.4.3",
@@ -19,5 +22,8 @@
       "yarn lint",
       "cd server && yarn test"
     ]
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
   }
 }

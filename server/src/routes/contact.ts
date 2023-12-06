@@ -35,7 +35,6 @@ export default function createContactEndpoints(contactFactory: ContactFactory): 
 
     route.get('/:contactId', async (req: express.Request, res: express.Response, next: express.NextFunction) => {
         const contactId = req.params.contactId;
-        console.log("req.params.contactId", req.params.contactId)
         try {
             const contact = await getContact({
                 contactId,
@@ -60,7 +59,6 @@ export default function createContactEndpoints(contactFactory: ContactFactory): 
 
     route.post('/', async (req: express.Request, res: express.Response, next: express.NextFunction) => {
         const { nom, prenom, email, telephone } = req.body;
-        console.log(req.body)
         try {
             const contact = await createContact({
                 params: {
