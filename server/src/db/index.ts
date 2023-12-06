@@ -1,7 +1,6 @@
 import { connect } from 'mongoose';
-import { MONGODB_URI } from '@/config';
 
-async function setupDatabase() {
+async function setupDatabase(MONGODB_URI: string) {
     // Connection à MongoDB
     await connect(MONGODB_URI);
 }

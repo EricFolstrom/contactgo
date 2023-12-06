@@ -1,3 +1,3 @@
-import createContactEndpoints from "./contact";
+import createContactEndpoints from './contact';
 
-export {createContactEndpoints};
+export { createContactEndpoints };

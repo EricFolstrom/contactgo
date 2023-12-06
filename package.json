@@ -17,7 +17,7 @@
   "lint-staged": {
     "server/src/*.ts": [
       "yarn lint",
-      "cd server && yarn test-staged"
+      "cd server && yarn test"
     ]
   }
 }
