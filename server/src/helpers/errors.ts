@@ -1,6 +1,6 @@
 export class UniqueContraintError extends Error {
     constructor(value: string) {
-        super(`${value} must be unique`);
+        super(`${value} already exists`);
 
         Error.captureStackTrace(this, UniqueContraintError);
     }

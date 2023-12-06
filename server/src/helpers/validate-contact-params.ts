@@ -15,6 +15,10 @@ export default function validateContactInfo({ nom, prenom, email, telephone }: I
         throw new RequiredParameterError(`telephone`);
     }
 
+    if (telephone && telephone.trim().length < 8) {
+        throw new InvalidPropertyError(`The telephone must be at least 8 caracters long`);
+    }
+
     if (!email || (email && email.trim().length == 0)) {
         throw new RequiredParameterError(`email`);
     }

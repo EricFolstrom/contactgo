@@ -48,7 +48,7 @@ export const getContacts = async ({
     page: number;
     contactFactory: ContactFactory;
 }) => {
-    const { contacts, totalPages, currentPage } = await contactFactory.findContacts({
+    const { contacts, totalPages, contactCount, currentPage } = await contactFactory.findContacts({
         limit,
         page,
     });
@@ -56,6 +56,7 @@ export const getContacts = async ({
     return {
         contacts,
         totalPages,
+        contactCount,
         currentPage,
     };
 };

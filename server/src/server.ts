@@ -23,7 +23,7 @@ async function start() {
         await setupDatabase(MONGODB_URI);
     }
     server.listen(PORT, () => {
-        console.log(`listening on port ${3002}`);
+        console.log(`listening on port ${PORT}`);
     });
 
     return { app, server };

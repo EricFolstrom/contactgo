@@ -50,6 +50,7 @@ export type ContactFactory = {
                 _id: Types.ObjectId;
             })[];
         totalPages: number;
+        contactCount: number;
         currentPage: number;
     }>;
     addContact: ({ nom, prenom, telephone, email }: IContact) => Promise<IContact>;
@@ -87,6 +88,7 @@ export const contactFactory: ContactFactory = {
         return {
             contacts,
             totalPages: Math.ceil(count / limit),
+            contactCount: count,
             currentPage: page,
         };
     },
